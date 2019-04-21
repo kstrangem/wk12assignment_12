@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Assignment 11</title>
+	</head>
+	<body>
+		<h1>West Elm Desks</h1>
+		<div class="app" v-cloak class="list-container">
+		<table>
+		<thead>
+			<th>Name</th>
+			<th>Style</th>
+			<th>Length</th>
+			<th>ID</th>
+		</thead>
+		<tbody>
+		    <tr is="desks-component"
+			    v-for="(desk, index) in desks"
+				v-bind:name="desks.name"
+				v-bind:style="desks.style"
+				v-bind:length="desks.length"
+				v-bind:id="desks.id">
+		    </desks-component>
+	       </tr>
+	      </tbody>
+		</table>
+	  
+	  <div>
+	    <form v-on:submit.prevent="addDesk">
+		<fieldset>
+		<legend>
+	      Add a Desk
+		</legend>
+			<div class="form-group">
+				<label> Name: <input type="text" v-model="nameInput"/></label>
+			<div class="form-group">
+				<label> Style: <input type="text" v-model="styleInput"/></label>
+			<div class="form-group">
+				<label> Length: <input type="text" v-model="lengthInput"/></label>
+			<div class="form-group">
+				<label> ID <input type="text" v-model="idInput"/></label>
+			</div>
+		   <button type="submit">Add Desk</button>
+		  </fieldset>
+		</form>
+	   </div>
+		    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		    <script src="script.js"></script>
+	 </body>
+</html>
